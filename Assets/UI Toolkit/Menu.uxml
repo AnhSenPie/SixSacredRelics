@@ -1,0 +1,9 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI%20Toolkit/menuStyle.uss?fileID=7433441132597879392&amp;guid=c585a5dc3b7f9d14aa5eef44ec6fd668&amp;type=3#menuStyle" />
+    <ui:VisualElement name="menuContainer" style="flex-grow: 0; width: 30%; height: 70%; align-self: center; top: 15%; background-image: url(&quot;project://database/Assets/Sprites/UI/HealthSys/Player_Index_bg.png?fileID=21300000&amp;guid=b5b5a676bf645324cac4451727c3a4ec&amp;type=3#Player_Index_bg&quot;); border-top-left-radius: 25px; border-top-right-radius: 25px; border-bottom-right-radius: 25px; border-bottom-left-radius: 25px;">
+        <ui:Label tabindex="-1" text="MENU" parse-escape-sequences="true" display-tooltip-when-elided="true" name="menuName" style="top: 10px; align-self: center; width: 100%; height: 5%; -unity-font-style: bold; font-size: 32px; -unity-text-align: middle-center; color: rgb(255, 133, 100); white-space: normal;" />
+        <ui:Button text="Túi đồ" parse-escape-sequences="true" display-tooltip-when-elided="true" name="inventoryBtn" class="btnStyle" />
+        <ui:Button text="Dịch chuyển" parse-escape-sequences="true" display-tooltip-when-elided="true" name="TeleportBtn" class="btnStyle" style="top: 10%; margin-top: 10%;" />
+        <ui:Button text="Thoát game" parse-escape-sequences="true" display-tooltip-when-elided="true" name="QuitBtn" class="btnStyle" style="top: 10%; margin-top: 10%;" />
+    </ui:VisualElement>
+</ui:UXML>
