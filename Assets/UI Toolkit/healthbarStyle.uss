@@ -1,0 +1,34 @@
+.healthBar {
+}
+
+.realHp {
+}
+
+.mpBar {
+}
+
+.indexText {
+}
+
+.playerInder {
+}
+
+.lvName {
+}
+
+.expImg {
+}
+
+.skillcfg{
+    position: absolute;
+    flex-shrink: 1;
+    top: 17px;
+    left: 1272px;
+    width: 77px;
+    height: 67px;
+    -unity-text-align: lower-left;
+    font-size: 33px;
+}
+.skillcfg:hover{
+    background-color: blue;
+}

@@ -1,0 +1,76 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Projectile
+  - ExpCollectible
+  - Weapon
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - Background
+  - Water
+  - UI
+  - 
+  - 
+  - Player
+  - Projectile
+  - Confiner
+  - Enemy
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: 1_background
+    uniqueID: 1723773601
+    locked: 0
+  - name: 2_thesun
+    uniqueID: 1061718739
+    locked: 0
+  - name: 3
+    uniqueID: 1919323741
+    locked: 0
+  - name: 4
+    uniqueID: 552375031
+    locked: 0
+  - name: 5
+    uniqueID: 2382285331
+    locked: 0
+  - name: 6
+    uniqueID: 816831853
+    locked: 0
+  - name: 7_theBase
+    uniqueID: 2504678543
+    locked: 0
+  - name: 8_theTree
+    uniqueID: 4173003651
+    locked: 0
+  - name: 9_Player
+    uniqueID: 940251753
+    locked: 0
+  - name: TheInventory
+    uniqueID: 1949821021
+    locked: 0

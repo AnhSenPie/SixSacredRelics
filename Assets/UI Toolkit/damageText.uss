@@ -1,0 +1,15 @@
+.critText {
+    color: rgb(255, 224, 34);
+    font-size: 32px;
+    -unity-font-style: bold;
+    -unity-font-style: italic;
+    text-shadow: 2px 2px 5px black;
+    -unity-font: url("project://database/Assets/Sprites/UI/TrueType%20(.ttf)/Kaph-Regular.ttf?fileID=12800000&guid=3bb7242c73b65fe49bdfd92df58f93fa&type=3#Kaph-Regular");
+    -unity-font-definition: initial;
+}
+
+.normalText {
+    color: white;
+    font-size: 22px;
+    -unity-font: url("project://database/Assets/Sprites/UI/TrueType%20(.ttf)/Kaph-Regular.ttf?fileID=12800000&guid=3bb7242c73b65fe49bdfd92df58f93fa&type=3#Kaph-Regular");
+}
