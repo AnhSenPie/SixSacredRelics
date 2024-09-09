@@ -1,0 +1,16 @@
+.btnStyle {
+    top: 10%;
+    margin-top: 10%;
+    align-self: center;
+    width: 50%;
+    height: 10%;
+    font-size: 32px;
+    color: rgb(255, 255, 255);
+    background-image: url("project://database/Assets/Sprites/UI/HealthSys/playerInfo_bg.png?fileID=21300000&guid=077be1a9f3db0f5448a9acdb874ae0d9&type=3#playerInfo_bg");
+    -unity-background-image-tint-color: rgb(211, 179, 179);
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    border-bottom-left-radius: 25px;
+    -unity-font-style: bold;
+}

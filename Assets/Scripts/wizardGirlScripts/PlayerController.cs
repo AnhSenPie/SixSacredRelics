@@ -301,7 +301,7 @@ namespace AnhSenPie
 
         void OpenInventory()
         {
-           if(Input.GetKeyDown(KeyCode.B))
+           if(Input.GetKeyDown(KeyCode.B) || Input.GetKeyDown(KeyCode.M) || Input.GetKeyDown(KeyCode.T))
             {
                 openbag = !openbag;
                 //Inventory.rootVisualElement.visible = openbag;

@@ -1,0 +1,8 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI%20Toolkit/startScreenStyle.uss?fileID=7433441132597879392&amp;guid=6639da5077f2a564883cd4608108e13f&amp;type=3#startScreenStyle" />
+    <ui:VisualElement name="container" style="flex-grow: 1; width: 100%; height: 100%; background-image: url(&quot;project://database/Assets/Sprites/Backgrounds/Background5.png?fileID=21300000&amp;guid=21ccac150b3155641a52dde347e67165&amp;type=3#Background5&quot;);">
+        <ui:VisualElement name="gameName" class="gameName" />
+        <ui:Label tabindex="-1" text="Xin chào, Tuấn Anh" parse-escape-sequences="true" display-tooltip-when-elided="true" name="playerName" class="playerName" />
+        <ui:Button text="BẮT ĐẦU" parse-escape-sequences="true" display-tooltip-when-elided="true" name="startGame" class="startBtn" />
+    </ui:VisualElement>
+</ui:UXML>
