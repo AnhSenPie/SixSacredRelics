@@ -10,7 +10,8 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 using UnityEngine.UIElements;
-
+using UnityEngine.SceneManagement;
+using AnhSenPai.Music;
 
 namespace AnhSenPie
 {
@@ -53,7 +54,8 @@ namespace AnhSenPie
         //weapon controll
         SwitchWeapon weapon;
 
-
+        //scene
+        Scene scene;
 
         public static PlayerController instance;
         //Move Tech
@@ -86,6 +88,8 @@ namespace AnhSenPie
             baseCritDmg = 50;
      
             instance = this;
+
+            scene = SceneManager.GetActiveScene();
         }
 
         private void Update()
@@ -102,9 +106,9 @@ namespace AnhSenPie
                 Run();
                 UpdateInfo();
                 LevelUp();
-            }          
-            
-        }
+            }
+            scene = SceneManager.GetActiveScene();
+            ChangeSound();        }
 
         private void OnCollisionEnter2D(Collision2D other)
         {            
@@ -306,6 +310,14 @@ namespace AnhSenPie
                 openbag = !openbag;
                 //Inventory.rootVisualElement.visible = openbag;
                 ExpManager.instance.m_Root.visible = !openbag;
+            }
+        }
+        void ChangeSound()
+        {           
+            if(scene.name == "TheForest")
+            {
+                AudioManager.instance.PlayMusic(AudioManager.instance.musicSounds[1].name);
+                Debug.Log(AudioManager.instance.musicSounds[1].name);              
             }
         }
 
