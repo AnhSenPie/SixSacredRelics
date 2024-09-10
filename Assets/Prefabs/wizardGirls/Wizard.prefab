@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 3238348358371870083}
   - component: {fileID: 4204798660884340052}
   - component: {fileID: 4183970087773763583}
+  - component: {fileID: 5417711554400097968}
   m_Layer: 8
   m_Name: Wizard
   m_TagString: Player
@@ -241,6 +242,24 @@ MonoBehaviour:
   WeaponList:
   - {fileID: 6810765753155735614}
   - {fileID: 6847155543884087453}
+--- !u!114 &5417711554400097968
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4105362945620786469}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e5aa9770487dc04e8f7cba21dee40b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SkillList:
+  - WeaponName: Staff
+    qPrefab: {fileID: 1756115049700442475, guid: 504d201263ef11347b071a55fd3aae3e, type: 3}
+    wPrefab: {fileID: 4783275609478977454, guid: 0f2fad28afaf60e4d889e9eff2567f70, type: 3}
+    ePrefab: {fileID: 4614396071960602842, guid: d26ff6ef80f85274dbdaab1c9d650897, type: 3}
+    rPrefab: {fileID: 3623658164599599013, guid: d8412555888c662478f93943bd5269ea, type: 3}
 --- !u!1 &6686134770164689883
 GameObject:
   m_ObjectHideFlags: 0

@@ -102,12 +102,12 @@ namespace AnhSenPie
             {               
                 //Hurt();
                 Die();
-                Attack();
-                Skill2();
+                Attack();               
                 Jump();
                 Run();
                 UpdateInfo();
                 LevelUp();
+                WeaponController.instance.CastSkill();
             }
             ChangeSound();
             scene = SceneManager.GetActiveScene();
@@ -170,7 +170,7 @@ namespace AnhSenPie
                     case 0:
                         ResetAttackAnim();
                         anim.SetFloat("Staff", 0.5f);
-                        Launch(1, lightningBullet, 1);
+                        StartCoroutine(Launch(1, lightningBullet, 1));
                         break;
                     case 1:
                         ResetAttackAnim();
@@ -180,28 +180,6 @@ namespace AnhSenPie
                 }
             }
           
-        }
-        void Skill2()
-        {
-            if (Input.GetKeyDown(KeyCode.Q))
-            {
-                anim.SetTrigger("attack");
-                switch (weapon.weaponIndex)
-                {
-                    case 0:
-                        ResetAttackAnim();
-                        anim.SetFloat("Staff", -0.5f);
-                        Launch(5, lightningBullet, 1);
-                        break;
-                    case 1:
-                        ResetAttackAnim();
-                        anim.SetFloat("Spear", -0.5f);
-                        this.Invoke(() => Launch(5, ThunderSpear, 3), 0.5f);
-
-                        break;
-
-                }
-            }
         }
         void ResetAttackAnim()
         {
@@ -285,24 +263,25 @@ namespace AnhSenPie
                 alive = true;
             }
         }
-        void Launch(int n, GameObject prefabs, float v)
+        public IEnumerator Launch(int n, GameObject prefabs, float v)
         {
             for (int i = 0; i < n; i++)
             {
-                Vector2 spawn = new Vector2(firePoint.position.x + 0.5f, firePoint.position.y + 0.5f + (float)i);
+                Vector2 spawn = new Vector2(firePoint.position.x + 0.5f, firePoint.position.y + 1.0f);
                 GameObject projectileObject = Instantiate(prefabs, spawn, firePoint.rotation);
                 Projectile projectile = projectileObject.GetComponent<Projectile>();
                 if (moveDirection.x < 0f)
                 {
-                    projectile.GetComponent<Projectile>().animator.SetBool("isFlip", true);
+                    projectile.GetComponent<Projectile>().transform.localScale = new Vector3(-1, 1, 0);
                     projectile.Launch(moveDirection, 300*v);
                 }
                 else if (moveDirection.x > 0f)
                 {
-                    projectile.GetComponent<Projectile>().animator.SetBool("isFlip", false);
+                    projectile.GetComponent<Projectile>().transform.localScale = new Vector3(1, 1, 0);
                     projectile.Launch(moveDirection, 300*v);
                 }
                 Destroy(projectileObject, 3.0f);
+                yield return new WaitForSeconds(0.1f);
             }
         }
 
