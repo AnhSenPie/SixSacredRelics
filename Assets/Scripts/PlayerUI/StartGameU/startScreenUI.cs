@@ -93,6 +93,6 @@ public class startScreenUI : MonoBehaviour
     }
     void Onclick()
     {
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(2, LoadSceneMode.Single);
     }
 }
