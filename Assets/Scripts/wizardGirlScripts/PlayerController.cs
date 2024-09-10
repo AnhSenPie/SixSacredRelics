@@ -56,6 +56,7 @@ namespace AnhSenPie
 
         //scene
         Scene scene;
+   
 
         public static PlayerController instance;
         //Move Tech
@@ -90,6 +91,7 @@ namespace AnhSenPie
             instance = this;
 
             scene = SceneManager.GetActiveScene();
+           
         }
 
         private void Update()
@@ -107,8 +109,9 @@ namespace AnhSenPie
                 UpdateInfo();
                 LevelUp();
             }
+            ChangeSound();
             scene = SceneManager.GetActiveScene();
-            ChangeSound();        }
+        }
 
         private void OnCollisionEnter2D(Collision2D other)
         {            
@@ -313,11 +316,10 @@ namespace AnhSenPie
             }
         }
         void ChangeSound()
-        {           
-            if(scene.name == "TheForest")
+        {
+            if (Input.GetKeyDown(KeyCode.P))
             {
-                AudioManager.instance.PlayMusic(AudioManager.instance.musicSounds[1].name);
-                Debug.Log(AudioManager.instance.musicSounds[1].name);              
+                AudioManager.instance.PlayMusic(AudioManager.instance.musicSounds[scene.buildIndex].name);
             }
         }
 

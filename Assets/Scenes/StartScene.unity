@@ -148,7 +148,7 @@ Transform:
   m_GameObject: {fileID: 120412827}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -173,6 +173,10 @@ MonoBehaviour:
     sound: {fileID: 8300000, guid: 2f17d89897faf62488f73b97a7ad6474, type: 3}
   - name: VillageTheme
     sound: {fileID: 8300000, guid: 88c16f08400997f4e826e4b2eab96966, type: 3}
+  - name: Eine Klein
+    sound: {fileID: 8300000, guid: a90f8c276b5996049b028ae3afc75787, type: 3}
+  - name: Maidens of Sancity
+    sound: {fileID: 8300000, guid: 9c7801dfbb173784ab16592f8258eb1c, type: 3}
   sfxSounds:
   - name: attack
     sound: {fileID: 8300000, guid: 2f17d89897faf62488f73b97a7ad6474, type: 3}

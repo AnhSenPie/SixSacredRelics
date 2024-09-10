@@ -38,7 +38,13 @@ namespace AnhSenPai.Music
             {
                 musicSource.clip = s.sound;
                 musicSource.Play();
-               
+            }
+        }
+        public void StopMusic()
+        {
+            if (musicSource != null)
+            {
+                musicSource.Stop();
             }
         }
         private void Start()
