@@ -15,6 +15,7 @@ namespace AnhSenPie.Inventory
         public enum ItemType
         {
             Healing,
+            ManaBonus,
             ExpIncreasing,
             SkillIncreasing,
             Atkbuff,

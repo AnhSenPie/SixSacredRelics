@@ -13,6 +13,8 @@ namespace AnhSenPie.Inventory
         public List<Slot> InventoryItems = new List<Slot>();
 
         public List<ItemData> InventoryData;//All item in Inventory
+
+        public ItemData Budget;
         public static InventoryController instance { get; private set; }
 
         private VisualElement m_Root;
@@ -20,8 +22,7 @@ namespace AnhSenPie.Inventory
         private VisualElement m_ItemInfo;
         private VisualElement m_ItemImage;
         private Label m_ItemText;
-       
-        private Label m_itemName;
+        Label budgetText;       private Label m_itemName;
         private int currentslot = 200;
         private int itemCount;
         private bool openbag = false;
@@ -29,6 +30,8 @@ namespace AnhSenPie.Inventory
 
         private Button deleteBtn;
         private Button usingBtn;
+
+        
         private void OnEnable()
         {
             instance = this;
@@ -45,6 +48,7 @@ namespace AnhSenPie.Inventory
             deleteBtn = m_Root.Q<Button>("dropBtn");
             usingBtn = m_Root.Q<Button>("useBtn");
             m_itemName = m_Root.Q<Label>("itemName");
+            budgetText = m_Root.Q<Label>("quantityText");
             //Create InventorySlots and add them as children to the SlotContainer
             for (int i = 0; i < currentslot; i++)
             {
@@ -82,6 +86,9 @@ namespace AnhSenPie.Inventory
                     OnDeleteBtnClicked();
                 }
             }
+
+            consumeGem(0);
+
             deleteBtn.clicked += OnDeleteBtnClicked;
             usingBtn.clicked += OnUsingBtnClicked;
         }
@@ -103,8 +110,16 @@ namespace AnhSenPie.Inventory
             {
                 AddItemByUID("diamond", 10);
             }
-
           
+        }
+
+        IEnumerator decreasingTime(float time, float baseIndex, float buffIndex)
+        {
+            yield return new WaitForSeconds(time);
+            
+            baseIndex -= buffIndex;
+
+            Debug.Log(baseIndex);
         }
         public void AddItemToSlot( int slotIndex, ItemData itemData)
         {
@@ -163,7 +178,11 @@ namespace AnhSenPie.Inventory
             
         }
 
-
+        public void consumeGem(int count)
+        {
+            Budget.quantity -= count;
+            budgetText.text = Budget.quantity.ToString();
+        }
         private void OnSlotClicked(Slot slot)
         {
             if (slot.ItemData != null)
@@ -228,6 +247,15 @@ namespace AnhSenPie.Inventory
                     case Item.ItemType.Weapon:
                         Debug.Log("Weapon");
                         break;
+                    case Item.ItemType.Atkbuff:
+                        PlayerController.instance.baseAtk += selectedSlot.ItemData.benefit;
+                        StartCoroutine(decreasingTime(300f, PlayerController.instance.baseAtk, selectedSlot.ItemData.benefit));
+                        break;
+                    case Item.ItemType.CritBuff:
+                      
+                        PlayerController.instance.baseCrit += selectedSlot.ItemData.benefit;
+                        StartCoroutine(decreasingTime(300f, PlayerController.instance.baseCrit, selectedSlot.ItemData.benefit));
+                        break;
                 }
 
                 if(selectedSlot.ItemData.quantity <= 0)
@@ -245,5 +273,6 @@ namespace AnhSenPie.Inventory
                 slot.UpdateSlot();
             }
         }
+
     }
 }

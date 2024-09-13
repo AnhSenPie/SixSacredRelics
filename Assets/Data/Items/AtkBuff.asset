@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 218882ea56a67564b9b7ed04d653edcf, type: 3}
+  m_Name: AtkBuff
+  m_EditorClassIdentifier: 
+  UID: atkbuff
+  itemName: "Thi\xEAn C\u01B0\u01A1ng Linh D\u1ECBch"
+  description: "+ 1000 ATK. Nh\u1EA5t th\u1EDDi b\u1EADt hack, nh\u1EA5t th\u1EDDi
+    s\u1EA3ng kho\xE1i. M\u1ED9t m\u1EF1c b\u1EADt hack, m\u1ED9t m\u1EF1c s\u1EA3ng
+    kho\xE1i"
+  itemType: 4
+  benefit: 1000
+  maxStack: 1000
+  itemIcon: {fileID: 21300000, guid: 987f602ee02d6f54e96c599bd223a900, type: 3}
+  stackable: 1
+  quantity: 10

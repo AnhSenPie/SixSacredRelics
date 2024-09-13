@@ -20,12 +20,6 @@ namespace AnhSenPie
             animator = GetComponent<Animator>();    
         }
 
-        void Update()
-        {
-
-        }
-
-
         public void Launch(Vector2 direction, float force)
         {
             Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
