@@ -7,6 +7,7 @@ TagManager:
   - Projectile
   - ExpCollectible
   - Weapon
+  - ground
   layers:
   - Default
   - TransparentFX
@@ -62,11 +63,14 @@ TagManager:
   - name: 6
     uniqueID: 816831853
     locked: 0
-  - name: 7_theBase
-    uniqueID: 2504678543
-    locked: 0
-  - name: 8_theTree
+  - name: 7_theTree
     uniqueID: 4173003651
+    locked: 0
+  - name: TreeOnInteract
+    uniqueID: 3470333043
+    locked: 0
+  - name: 8_theBase
+    uniqueID: 2504678543
     locked: 0
   - name: 9_Player
     uniqueID: 940251753

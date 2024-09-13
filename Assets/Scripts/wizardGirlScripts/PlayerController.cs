@@ -25,7 +25,7 @@ namespace AnhSenPie
         
         Vector3 movement;
         private int direction = 1;
-        private bool isJumping = false;
+        public bool isJumping = false;
         private bool alive = true;
         public bool openbag = false;
         //HEALTH SYSTE
@@ -114,12 +114,17 @@ namespace AnhSenPie
         }
 
         private void OnCollisionEnter2D(Collision2D other)
-        {            
-            anim.SetBool("isJump", false) ;
-            isJumping = false;
+        {   
+            if(other.gameObject.CompareTag("ground"))
+            {
+                anim.SetBool("isJump", false);
+                isJumping = false;
+            }
+            
         }
         private void OnCollisionExit2D(Collision2D collision)
         {
+            if(collision.collider.tag == "ground")
             isJumping = true;
         }
         void Run()
@@ -270,16 +275,10 @@ namespace AnhSenPie
                 Vector2 spawn = new Vector2(firePoint.position.x + 0.5f, firePoint.position.y + 1.0f);
                 GameObject projectileObject = Instantiate(prefabs, spawn, firePoint.rotation);
                 Projectile projectile = projectileObject.GetComponent<Projectile>();
-                if (moveDirection.x < 0f)
-                {
+
                     projectile.GetComponent<Projectile>().transform.localScale = new Vector3(-1, 1, 0);
-                    projectile.Launch(moveDirection, 300*v);
-                }
-                else if (moveDirection.x > 0f)
-                {
-                    projectile.GetComponent<Projectile>().transform.localScale = new Vector3(1, 1, 0);
-                    projectile.Launch(moveDirection, 300*v);
-                }
+                    projectile.Launch(WeaponController.instance.direction, 300*v);
+
                 Destroy(projectileObject, 3.0f);
                 yield return new WaitForSeconds(0.1f);
             }
@@ -293,6 +292,10 @@ namespace AnhSenPie
                 //Inventory.rootVisualElement.visible = openbag;
                 ExpManager.instance.m_Root.visible = !openbag;
             }
+        }
+        public void AddItemByUID(string UID, int n)
+        {
+            InventoryController.instance.AddItemByUID(UID, n);
         }
         void ChangeSound()
         {

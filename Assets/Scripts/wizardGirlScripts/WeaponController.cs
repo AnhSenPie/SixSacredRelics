@@ -12,10 +12,19 @@ namespace AnhSenPai.Weapon
         public SkillSys[] SkillList;
         PlayerController player;
         public static WeaponController instance;
+        Vector3 mousePos;
+        public Vector3 direction;
+
         private void Awake()
         {
             player = GetComponent<PlayerController>();
             instance = this;
+            
+        }
+        private void Update()
+        {
+            mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            direction = (mousePos - transform.position).normalized;
         }
 
         public void CastSkill() //index require
