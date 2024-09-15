@@ -7,6 +7,10 @@ using UnityEngine.SceneManagement;
 public class TeleportController : MonoBehaviour
 {
     Button map1;
+    Button map2;
+    Button map3;
+    Button map4;
+    Button map5;
     UIDocument uIDocument;
     VisualElement root;
     bool isOpen = false;
@@ -16,8 +20,16 @@ public class TeleportController : MonoBehaviour
         uIDocument = GetComponent<UIDocument>();
         root = uIDocument.rootVisualElement;
         map1 = root.Q<Button>("map1");
+        map2 = root.Q<Button>("map2");
+        map3 = root.Q<Button>("map3");
+        map4 = root.Q<Button>("map4");
+        map5 = root.Q<Button>("map5");
         root.visible = isOpen;
         map1.clicked += ()=>  teleClicked(1);
+        map2.clicked += () => teleClicked(2);
+        map3.clicked += () => teleClicked(3);
+        map4.clicked += () => teleClicked(4);
+        map5.clicked += () => teleClicked(5);
     }
     private void Update()
     {

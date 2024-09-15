@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace AnhSenPie
+namespace AnhSenPai
 {
     public class MonsterController : MonoBehaviour
     {

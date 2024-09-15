@@ -8,6 +8,7 @@ namespace AnhSenPai.Weapon
     public class SkillSys
     {
         public string WeaponName;
+        public int ManaConsume;
         public GameObject qPrefab;
         public GameObject wPrefab;
         public GameObject ePrefab;

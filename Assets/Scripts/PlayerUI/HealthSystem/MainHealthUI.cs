@@ -26,7 +26,7 @@ public class MainHealthUI : MonoBehaviour
     {
         m_Healthbar.style.width = Length.Percent(100 * percentage);
     }
-    public void SetHealthText(float currentHealth, float maxHealth)
+    public void SetText(float currentHealth, float maxHealth)
     {
         hpText.text ="HP: " + currentHealth.ToString() + "/" + maxHealth.ToString();
     }

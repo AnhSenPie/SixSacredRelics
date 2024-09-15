@@ -5,8 +5,9 @@ using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEditor.Rendering;
 using UnityEngine;
 using UnityEngine.UIElements;
+using AnhSenPai;
 
-namespace AnhSenPie.Inventory
+namespace AnhSenPai.Inventory
 {
     public class InventoryController : MonoBehaviour
     {
@@ -243,6 +244,10 @@ namespace AnhSenPie.Inventory
                     case Item.ItemType.ExpIncreasing:
                         PlayerController.instance.ChangeExp(selectedSlot.ItemData.benefit);
                         Debug.Log("Exp Increasing Item");
+                        break;
+                    case Item.ItemType.ManaBonus:
+                        PlayerController.instance.ChangeMana(selectedSlot.ItemData.benefit);
+                        Debug.Log("Mana Item");
                         break;
                     case Item.ItemType.Weapon:
                         Debug.Log("Weapon");

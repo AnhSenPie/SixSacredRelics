@@ -4,7 +4,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 
 
-namespace AnhSenPie.Inventory
+namespace AnhSenPai.Inventory
 {
     [CreateAssetMenu(fileName = "NewItem", menuName = "Inventory/Item")]
     public class ItemData : ScriptableObject

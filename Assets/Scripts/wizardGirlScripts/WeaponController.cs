@@ -1,5 +1,4 @@
 
-using AnhSenPie;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -14,6 +13,7 @@ namespace AnhSenPai.Weapon
         public static WeaponController instance;
         Vector3 mousePos;
         public Vector3 direction;
+        public float angle;
 
         private void Awake()
         {
@@ -25,25 +25,38 @@ namespace AnhSenPai.Weapon
         {
             mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             direction = (mousePos - transform.position).normalized;
+            angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         }
 
-        public void CastSkill() //index require
+        public void CastSkill(int weaponIndex) //index require
         {
-            if (Input.GetKeyDown(KeyCode.Q))
+            int amount = SkillList[weaponIndex].ManaConsume;
+            if (PlayerController.instance.currentMP >= amount)
             {
-                StartCoroutine(player.Launch(3, SkillList[0].qPrefab, 5));
+                if (Input.GetKeyDown(KeyCode.Q))
+                {
+                    StartCoroutine(player.Launch(3, SkillList[weaponIndex].qPrefab, 5));
+                    PlayerController.instance.ChangeMana(-amount);
+                }
+                if (Input.GetKeyDown(KeyCode.W))
+                {
+                    StartCoroutine(player.Launch(3, SkillList[weaponIndex].wPrefab, 5));
+                    PlayerController.instance.ChangeMana(-amount);
+                }
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    StartCoroutine(player.Launch(3, SkillList[weaponIndex].ePrefab, 5));
+                    PlayerController.instance.ChangeMana(-amount);
+                }
+                if (Input.GetKeyDown(KeyCode.R))
+                {
+                    StartCoroutine(player.Launch(3, SkillList[weaponIndex].rPrefab, 5));
+                    PlayerController.instance.ChangeMana(-amount);
+                }
             }
-            if (Input.GetKeyDown(KeyCode.W))
+            else
             {
-                StartCoroutine( player.Launch(3, SkillList[0].wPrefab, 5));
-            }
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-                StartCoroutine( player.Launch(3, SkillList[0].ePrefab, 5));
-            }
-            if (Input.GetKeyDown(KeyCode.R))
-            {           
-                StartCoroutine(player.Launch(3, SkillList[0].rPrefab, 5));
+                Debug.Log("Run out of Mana");
             }
         }
     }

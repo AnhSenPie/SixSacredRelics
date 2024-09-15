@@ -8,6 +8,7 @@ TagManager:
   - ExpCollectible
   - Weapon
   - ground
+  - PotionNPC
   layers:
   - Default
   - TransparentFX

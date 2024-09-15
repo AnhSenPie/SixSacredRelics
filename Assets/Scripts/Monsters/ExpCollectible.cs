@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-namespace AnhSenPie
+namespace AnhSenPai
 {
     public class ExpCollectible : MonoBehaviour
     {

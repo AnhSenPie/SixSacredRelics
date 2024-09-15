@@ -1,5 +1,5 @@
 ﻿using AnhSenPai.Weapon;
-using AnhSenPie.Inventory;
+using AnhSenPai.Inventory;
 using JetBrains.Annotations;
 using System;
 using System.Collections;
@@ -13,7 +13,7 @@ using UnityEngine.UIElements;
 using UnityEngine.SceneManagement;
 using AnhSenPai.Music;
 
-namespace AnhSenPie
+namespace AnhSenPai
 {
     public class PlayerController : MonoBehaviour
     {
@@ -30,6 +30,8 @@ namespace AnhSenPie
         public bool openbag = false;
         //HEALTH SYSTE
         public float maxHealth = 500;
+        public float maxMP = 100f;
+        public float currentMP;
         public float currentHealth;
        // public float health { get { return currentHealth; } }
         // Variables related to projectiles
@@ -53,6 +55,7 @@ namespace AnhSenPie
 
         //weapon controll
         SwitchWeapon weapon;
+        public GameObject WeaponControl;
 
         //scene
         Scene scene;
@@ -63,15 +66,17 @@ namespace AnhSenPie
         
         Vector2 moveDirection = new Vector2(1, 0);
         private bool doubleJump;
-        // Start is called before the first frame update
         void Start()
         {
        
             rb = GetComponent<Rigidbody2D>();
             anim = GetComponent<Animator>();
-            currentHealth = maxHealth;
-            MainHealthUI.instance.SetHealthText(currentHealth, maxHealth);   
 
+            
+            currentMP = maxMP;
+            currentHealth = maxHealth;
+            MainHealthUI.instance.SetText(currentHealth, maxHealth);   
+            MainManaUI.instance.SetText(currentMP, maxMP);    
             ExpManager.instance.SetExpText(currentExp, maxExp);
             ExpManager.instance.SetLvlNum(currentLevel);
             ExpManager.instance.CircularAnimateUI();
@@ -87,7 +92,7 @@ namespace AnhSenPie
             baseDef = 10;
             baseCrit = 5;
             baseCritDmg = 50;
-     
+            
             instance = this;
 
             scene = SceneManager.GetActiveScene();
@@ -107,7 +112,7 @@ namespace AnhSenPie
                 Run();
                 UpdateInfo();
                 LevelUp();
-                WeaponController.instance.CastSkill();
+                WeaponController.instance.CastSkill(weapon.weaponIndex);
             }
             ChangeSound();
             scene = SceneManager.GetActiveScene();
@@ -137,8 +142,8 @@ namespace AnhSenPie
             {
                 direction = -1;
                 moveVelocity = Vector3.left;
-
-                transform.localScale = new Vector3(direction, 1, 0);
+                transform.localScale = new Vector3(direction, 1, 1);
+                ScaleWeapon();
                 if (!isJumping)
                     anim.SetBool("isRun", true);
                 
@@ -148,13 +153,14 @@ namespace AnhSenPie
             {
                 direction = 1;
                 moveVelocity = Vector3.right;
-
-                transform.localScale = new Vector3(direction, 1, 0);
+                transform.localScale = new Vector3(direction, 1, 1);
+                ScaleWeapon() ;
                 if (!isJumping)
                     anim.SetBool("isRun", true);
 
             }
             transform.position += moveVelocity * movePower * Time.deltaTime;
+          
             moveDirection.Set(direction, 0);
         }
         void Jump()
@@ -179,12 +185,28 @@ namespace AnhSenPie
                         break;
                     case 1:
                         ResetAttackAnim();
-                        anim.SetFloat("Spear", 0.5f);                    
+                        anim.SetFloat("Staff", 0.5f);
+                        Debug.Log(WeaponControl.name);                      
                         break;
 
                 }
             }
           
+        }
+        void ScaleWeapon()
+        {
+            if(weapon.weaponIndex == 1)
+            {
+                WeaponControl.transform.localScale = new Vector3(2, 2, 1);
+                Debug.Log(WeaponControl.transform.localScale);
+            }
+            else
+            {
+                WeaponControl.transform.localScale = Vector3.one;
+                Debug.Log(WeaponControl.transform.localScale);
+            }
+            WeaponControl.transform.rotation = Quaternion.Euler(new Vector3(0, 0, WeaponController.instance.angle - 180));
+            
         }
         void ResetAttackAnim()
         {
@@ -215,6 +237,10 @@ namespace AnhSenPie
         {
             currentHealth = Mathf.Clamp(currentHealth + amount, 0, maxHealth);
         }
+        public void ChangeMana(float amount)
+        {
+            currentMP = Mathf.Clamp(currentMP + amount, 0, maxMP);
+        }
         //Exp Sys Func
         public void ChangeExp(float amount)
         {
@@ -227,8 +253,11 @@ namespace AnhSenPie
         }
         void UpdateInfo()
         {
-            MainHealthUI.instance.SetHealthText(currentHealth, maxHealth);
+            MainHealthUI.instance.SetText(currentHealth, maxHealth);
+            MainHealthUI.instance.SetHealthValue(currentHealth / maxHealth);
             ExpManager.instance.SetExpText(currentExp, maxExp);
+            MainManaUI.instance.SetText(currentMP, maxMP);
+            MainManaUI.instance.SetValue(currentMP/maxMP);
         }
         private void OnTriggerEnter2D(Collider2D other)
         {
@@ -253,9 +282,10 @@ namespace AnhSenPie
                 baseCritDmg += 10;
                 baseAtk += LevelName.instance.atkBonus;
                 baseDef += LevelName.instance.defBonus;
+                maxMP += LevelName.instance.mpBonus;
                 ChangeHealth(maxHealth - currentHealth);
-                ExpManager.instance.SetLvlNum(currentLevel);
-                
+                ChangeMana(maxMP - currentMP);
+                ExpManager.instance.SetLvlNum(currentLevel);                
                 ExpManager.instance.SetLevelName(currentTuvi);
                 Debug.Log(LevelName.instance.ExpBonus);
             }
@@ -277,7 +307,7 @@ namespace AnhSenPie
                 Projectile projectile = projectileObject.GetComponent<Projectile>();
 
                     projectile.GetComponent<Projectile>().transform.localScale = new Vector3(-1, 1, 0);
-                    projectile.Launch(WeaponController.instance.direction, 300*v);
+                    projectile.Launch(WeaponController.instance.direction, 10*v);
 
                 Destroy(projectileObject, 3.0f);
                 yield return new WaitForSeconds(0.1f);

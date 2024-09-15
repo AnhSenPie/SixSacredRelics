@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace AnhSenPie.Inventory
+namespace AnhSenPai.Inventory
 {
     public class Item
     {

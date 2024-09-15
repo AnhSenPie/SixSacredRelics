@@ -1,4 +1,4 @@
-﻿using AnhSenPie;
+﻿
 using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
@@ -6,7 +6,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-namespace AnhSenPie
+namespace AnhSenPai
 {
     public class ExpManager : MonoBehaviour
     {

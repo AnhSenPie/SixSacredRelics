@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-namespace AnhSenPie.Inventory {
+namespace AnhSenPai.Inventory {
     public class InputSystem : VisualElement
     {
         [UnityEngine.Scripting.Preserve]

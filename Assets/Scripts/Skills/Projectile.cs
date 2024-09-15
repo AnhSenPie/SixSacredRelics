@@ -1,11 +1,12 @@
-using AnhSenPie;
+using AnhSenPai;
+using AnhSenPai.Weapon;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 
 
-namespace AnhSenPie
+namespace AnhSenPai
 {
     public class Projectile : MonoBehaviour
     {
@@ -22,12 +23,8 @@ namespace AnhSenPie
 
         public void Launch(Vector2 direction, float force)
         {
-            Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            Vector2 directiona = mousePos - transform.position;
-            float angle = Mathf.Atan2(directiona.y, directiona.x) * Mathf.Rad2Deg;
-            transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle - 180));
-            rigidbody2d.AddForce(direction * force * v);
-         
+            transform.rotation = Quaternion.Euler(new Vector3(0, 0, WeaponController.instance.angle - 180));
+            rigidbody2d.AddForce(direction * force * v, ForceMode2D.Impulse);      
         }
 
         /*    void OnCollisionEnter2D(Collision2D other)

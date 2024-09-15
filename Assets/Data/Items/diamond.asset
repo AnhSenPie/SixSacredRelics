@@ -13,11 +13,12 @@ MonoBehaviour:
   m_Name: diamond
   m_EditorClassIdentifier: 
   UID: diamond
-  itemName: DiaMondo
-  description: +700 exp
-  itemType: 1
+  itemName: "Linh Th\u1EA1ch T\u1EF1 Nhi\xEAn"
+  description: "+700 exp. S\u1EA3n ph\u1EA9m \u0111\u01B0\u1EE3c ng\u01B0ng k\u1EBFt
+    t\u1EEB tr\u1EADn ph\xE1p th\u01B0\u1EE3ng c\u1ED5"
+  itemType: 2
   benefit: 700
   maxStack: 1000
   itemIcon: {fileID: 21300000, guid: ab698dab9498c1f45914c3d1497d5648, type: 3}
   stackable: 1
-  quantity: 403
+  quantity: 865
