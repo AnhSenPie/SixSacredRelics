@@ -69,6 +69,21 @@ namespace AnhSenPai.Inventory
                 {
                     quantity.visible = false;
                 }
+                switch (ItemData.Rarelity)
+                {
+                    case Item.ItemRarelity.thien:
+                        AddToClassList("thien");
+                        break;
+                    case Item.ItemRarelity.dia:
+                        AddToClassList("dia");
+                        break;
+                    case Item.ItemRarelity.huyen:
+                        AddToClassList("huyen");
+                        break;
+                    case Item.ItemRarelity.hoang:
+                        AddToClassList("hoang");
+                        break;
+                }
             }
             else
             {
@@ -80,3 +95,4 @@ namespace AnhSenPai.Inventory
     }
 
 }
+

@@ -16,6 +16,7 @@ MonoBehaviour:
   itemName: "Linh th\u1EA1ch c\u1EA5p 10"
   description: Exp +10000
   itemType: 1
+  Rarelity: 1
   benefit: 10000
   maxStack: 1000
   itemIcon: {fileID: 21300000, guid: 540bdc739067ccd41b432ef46572a062, type: 3}

@@ -27,7 +27,6 @@ namespace AnhSenPai
         private int direction = 1;
         public bool isJumping = false;
         private bool alive = true;
-        public bool openbag = false;
         //HEALTH SYSTE
         public float maxHealth = 500;
         public float maxMP = 100f;
@@ -55,7 +54,7 @@ namespace AnhSenPai
 
         //weapon controll
         SwitchWeapon weapon;
-        public GameObject WeaponControl;
+
 
         //scene
         Scene scene;
@@ -101,9 +100,8 @@ namespace AnhSenPai
 
         private void Update()
         {
-            Restart();
-            OpenInventory();          
-            if (alive && !openbag)
+            Restart();        
+            if (alive && UIDocumentManager.instance.uiOnEnable == false)
             {               
                 //Hurt();
                 Die();
@@ -143,7 +141,7 @@ namespace AnhSenPai
                 direction = -1;
                 moveVelocity = Vector3.left;
                 transform.localScale = new Vector3(direction, 1, 1);
-                ScaleWeapon();
+                
                 if (!isJumping)
                     anim.SetBool("isRun", true);
                 
@@ -154,7 +152,7 @@ namespace AnhSenPai
                 direction = 1;
                 moveVelocity = Vector3.right;
                 transform.localScale = new Vector3(direction, 1, 1);
-                ScaleWeapon() ;
+                
                 if (!isJumping)
                     anim.SetBool("isRun", true);
 
@@ -186,28 +184,13 @@ namespace AnhSenPai
                     case 1:
                         ResetAttackAnim();
                         anim.SetFloat("Staff", 0.5f);
-                        Debug.Log(WeaponControl.name);                      
+                     
                         break;
-
                 }
             }
           
         }
-        void ScaleWeapon()
-        {
-            if(weapon.weaponIndex == 1)
-            {
-                WeaponControl.transform.localScale = new Vector3(2, 2, 1);
-                Debug.Log(WeaponControl.transform.localScale);
-            }
-            else
-            {
-                WeaponControl.transform.localScale = Vector3.one;
-                Debug.Log(WeaponControl.transform.localScale);
-            }
-            WeaponControl.transform.rotation = Quaternion.Euler(new Vector3(0, 0, WeaponController.instance.angle - 180));
-            
-        }
+
         void ResetAttackAnim()
         {
             anim.SetFloat("Staff", 0);
@@ -314,15 +297,6 @@ namespace AnhSenPai
             }
         }
 
-        void OpenInventory()
-        {
-           if(Input.GetKeyDown(KeyCode.B) || Input.GetKeyDown(KeyCode.M) || Input.GetKeyDown(KeyCode.T))
-            {
-                openbag = !openbag;
-                //Inventory.rootVisualElement.visible = openbag;
-                ExpManager.instance.m_Root.visible = !openbag;
-            }
-        }
         public void AddItemByUID(string UID, int n)
         {
             InventoryController.instance.AddItemByUID(UID, n);
@@ -334,7 +308,7 @@ namespace AnhSenPai
                 AudioManager.instance.PlayMusic(AudioManager.instance.musicSounds[scene.buildIndex].name);
             }
         }
-
+        
     }
 }
 

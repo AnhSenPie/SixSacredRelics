@@ -1,0 +1,223 @@
+.container {
+    flex-grow: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("project://database/Assets/Sprites/UI/ItemSys/inventoryGUI/barmid_ready.png?fileID=21300000&guid=f7f681cd213d9a7488500ce745f2d4f8&type=3#barmid_ready");
+}
+
+.header {
+    flex-shrink: 1;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+    height: 9%;
+    -unity-text-align: middle-center;
+    -unity-font-style: bold;
+    font-size: 34px;
+    color: rgb(255, 250, 46);
+    align-self: center;
+    background-image: none;
+    -unity-background-scale-mode: stretch-to-fill;
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    padding-top: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+}
+
+.slotsContainer {
+    flex-grow: 0;
+    background-image: url("project://database/Assets/Sprites/UI/ItemSys/inventoryGUI/Mini_background.png?fileID=21300000&guid=4f033cdd2b09f9a43b139729d09d002c&type=3#Mini_background");
+    height: 82%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 85%;
+    justify-content: flex-start;
+    align-self: center;
+    padding-top: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+}
+
+.itemInfo {
+    flex-grow: 0;
+    width: 90%;
+    height: 68%;
+    align-self: center;
+    background-image: url("project://database/Assets/Sprites/UI/ItemSys/inventoryGUI/Frame_big.png?fileID=21300000&guid=c430351465fe1fc42a6bef5878a08253&type=3#Frame_big");
+    background-color: rgba(255, 255, 255, 0);
+    -unity-background-image-tint-color: rgb(255, 156, 86);
+}
+
+.itemName {
+    font-size: 25px;
+    color: rgb(243, 243, 243);
+    -unity-font-style: bold;
+    -unity-text-align: middle-center;
+    white-space: normal;
+    width: 100%;
+    height: 10%;
+}
+
+.description {
+    width: 80%;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+    height: 30%;
+    -unity-text-align: middle-left;
+    border-left-color: rgba(230, 155, 26, 0);
+    border-right-color: rgba(230, 155, 26, 0);
+    border-top-color: rgba(230, 155, 26, 0);
+    border-bottom-color: rgba(230, 155, 26, 0);
+    border-top-width: 1px;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+    border-left-width: 1px;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+    border-bottom-left-radius: 6px;
+    background-image: url("project://database/Assets/Sprites/Map/TheForest/Backgrounds/BACKGROUND.png?fileID=21300000&guid=f44fd67bd73d546469d7c317fcd1d5ae&type=3#BACKGROUND");
+    -unity-background-image-tint-color: rgb(230, 79, 86);
+    font-size: 18px;
+    color: rgb(255, 242, 242);
+}
+
+.useBtn {
+    width: 50%;
+    align-self: center;
+    margin-top: 12px;
+    margin-right: 12px;
+    margin-bottom: 12px;
+    margin-left: 12px;
+    font-size: 24px;
+    -unity-font-style: bold;
+    color: rgb(255, 255, 255);
+    background-color: rgb(0, 209, 247);
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    border-bottom-left-radius: 25px;
+}
+
+.dropBtn {
+    width: 50%;
+    align-self: center;
+    margin-top: 12px;
+    margin-right: 12px;
+    margin-bottom: 12px;
+    margin-left: 12px;
+    font-size: 24px;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    border-bottom-left-radius: 25px;
+    background-color: rgb(255, 31, 15);
+    -unity-font-style: bold;
+    color: rgb(220, 217, 217);
+}
+
+.useBtn:hover {
+    background-color: cyan;
+}
+
+.dropBtn:hover {
+    background-color: pink;
+}
+
+.scrollView {
+    width: 70%;
+    height: 80%;
+}
+
+.scrollView > .unity-scroll-view__vertical-scroller {
+    background-color: rgb(224, 224, 224);
+    width: 12px;
+}
+
+.quantity {
+    flex-direction: row;
+    width: 90%;
+    height: 15%;
+    -unity-text-align: middle-right;
+    color: rgb(255, 255, 255);
+}
+
+.slotIcon {
+    flex-grow: 0;
+    flex-direction: row;
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    width: 80%;
+    justify-content: center;
+    left: 10px;
+    background-image: none;
+    flex-wrap: wrap;
+    height: 80%;
+}
+
+.slot {
+    -unity-background-image-tint-color: rgb(70, 65, 54);
+    -unity-background-scale-mode: stretch-to-fill;
+    width: 128px;
+    height: 128px;
+    background-image: url("project://database/Assets/Sprites/UI/HealthSys/Player_Index_bg.png?fileID=2800000&guid=b5b5a676bf645324cac4451727c3a4ec&type=3#Player_Index_bg");
+    align-self: auto;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    padding-top: 5px;
+    padding-right: 5px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+}
+
+.thien {
+    -unity-background-image-tint-color: rgb(248, 0, 255);
+}
+
+.dia {
+    -unity-background-image-tint-color: rgb(255, 0, 85);
+}
+
+.huyen {
+    -unity-background-image-tint-color: rgb(0, 242, 187);
+}
+
+.hoang {
+    -unity-background-image-tint-color: rgb(182, 124, 25);
+}
+
+#buyQuantity #unity-drag-container {
+    align-self: auto;
+    flex-direction: row;
+}
+
+#buyQuantity #unity-tracker {
+    flex-grow: 0;
+    width: 80%;
+    align-self: center;
+    justify-content: center;
+    flex-wrap: nowrap;
+    -unity-text-align: middle-left;
+    left: 10%;
+}
+
+#buyQuantity #unity-dragger {
+    left: 10%;
+}
+
+#buyQuantity Label {
+    display: none;
+}

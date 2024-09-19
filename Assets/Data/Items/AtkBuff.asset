@@ -18,6 +18,7 @@ MonoBehaviour:
     s\u1EA3ng kho\xE1i. M\u1ED9t m\u1EF1c b\u1EADt hack, m\u1ED9t m\u1EF1c s\u1EA3ng
     kho\xE1i"
   itemType: 4
+  Rarelity: 1
   benefit: 1000
   maxStack: 1000
   itemIcon: {fileID: 21300000, guid: 987f602ee02d6f54e96c599bd223a900, type: 3}

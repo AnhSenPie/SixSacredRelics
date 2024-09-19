@@ -13,7 +13,6 @@ public class TeleportController : MonoBehaviour
     Button map5;
     UIDocument uIDocument;
     VisualElement root;
-    bool isOpen = false;
 
     private void Awake()
     {
@@ -24,20 +23,12 @@ public class TeleportController : MonoBehaviour
         map3 = root.Q<Button>("map3");
         map4 = root.Q<Button>("map4");
         map5 = root.Q<Button>("map5");
-        root.visible = isOpen;
+  
         map1.clicked += ()=>  teleClicked(1);
         map2.clicked += () => teleClicked(2);
         map3.clicked += () => teleClicked(3);
         map4.clicked += () => teleClicked(4);
         map5.clicked += () => teleClicked(5);
-    }
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.T))
-        {
-            isOpen = !isOpen;
-            root.visible = isOpen;
-        }
     }
     void teleClicked(int index)
     {

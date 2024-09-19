@@ -1,0 +1,31 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI%20Toolkit/storyUSS.uss?fileID=7433441132597879392&amp;guid=8fd53ad2fe5415b4391fae441354e2de&amp;type=3#storyUSS" />
+    <ui:VisualElement name="StoryContainer" style="flex-grow: 1; visibility: visible; display: flex; overflow: visible;">
+        <ui:VisualElement name="StoryTool" style="flex-grow: 1; flex-direction: column; width: 100%; height: 55%; visibility: visible;">
+            <ui:VisualElement name="upperTool" style="flex-grow: 0; flex-direction: row-reverse; width: 100%; height: 60%;">
+                <ui:Button text="Auto" parse-escape-sequences="true" display-tooltip-when-elided="true" name="autoBtn" class="btnTool" />
+                <ui:Button text="Skip" parse-escape-sequences="true" display-tooltip-when-elided="true" name="skipBtn" class="btnTool" style="width: 128px; height: 64px;" />
+                <ui:Button text="x2" parse-escape-sequences="true" display-tooltip-when-elided="true" name="x2Btn" class="btnTool" style="height: 64px; width: 128px;" />
+            </ui:VisualElement>
+            <ui:VisualElement name="lowerTool" style="flex-grow: 0; flex-direction: column-reverse; justify-content: flex-start; align-items: flex-end; width: 100%; height: 35%;">
+                <ui:VisualElement name="cancelContainer" style="flex-grow: 0; max-width: 100%; flex-direction: row-reverse;">
+                    <ui:Button text="Thoát" parse-escape-sequences="true" display-tooltip-when-elided="true" name="cancelBtn" class="btnTool" style="width: 512px; font-size: 24px; visibility: visible;" />
+                    <ui:Label tabindex="-1" text="2" parse-escape-sequences="true" display-tooltip-when-elided="true" name="confirmText" focusable="false" class="confirmText" style="visibility: visible;" />
+                </ui:VisualElement>
+                <ui:VisualElement name="interactContainr" style="flex-grow: 0; max-width: 100%; flex-direction: row-reverse;">
+                    <ui:Button text="Mua dược phẩm" parse-escape-sequences="true" display-tooltip-when-elided="true" name="interactBtn" class="btnTool" style="width: 512px; font-size: 24px;" />
+                    <ui:Label tabindex="-1" text="1" parse-escape-sequences="true" display-tooltip-when-elided="true" name="confirmText" class="confirmText" style="visibility: visible;" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="storyContext" style="flex-grow: 0; flex-direction: column; flex-wrap: nowrap; width: 100%; height: 35%; align-self: auto; justify-content: flex-start; background-image: none; opacity: 0.99; visibility: visible;">
+            <ui:VisualElement name="bg" style="flex-grow: 0; background-image: url(&quot;project://database/Assets/Sprites/UI/ItemSys/dialogue.png?fileID=21300000&amp;guid=a0d66f7aa8c2aaf4495d3cb628f6324b&amp;type=3#dialogue&quot;); width: 100%; height: 100%; opacity: 0.5; position: absolute;" />
+            <ui:Label tabindex="-1" text="AnhSenPai" parse-escape-sequences="true" display-tooltip-when-elided="true" name="TalkerName" style="width: 100%; height: 20%; flex-wrap: wrap; flex-direction: row; -unity-text-align: middle-center; color: rgb(239, 253, 5); font-size: 32px; -unity-font-style: bold; letter-spacing: 10px; word-spacing: 1px;" />
+            <ui:VisualElement name="breakPart" style="flex-grow: 0; width: 50%; height: 2%; align-self: center; background-image: url(&quot;project://database/Assets/Sprites/Backgrounds/Layers/1.png?fileID=21300000&amp;guid=0cda9587264340548be108fecceef174&amp;type=3#1&quot;); border-top-left-radius: 102px; border-top-right-radius: 102px; border-bottom-right-radius: 102px; border-bottom-left-radius: 102px; -unity-background-image-tint-color: rgb(220, 209, 101);" />
+            <ui:Label tabindex="-1" text="Hello World" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Content" style="white-space: normal; -unity-text-align: middle-center; width: 100%; height: 70%; color: rgb(255, 255, 255); font-size: 24px; padding-top: 25px; padding-right: 10%; padding-bottom: 25px; padding-left: 10%;" />
+            <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="nextBtn" style="position: absolute; top: auto; left: 0; width: 100%; height: 100%; rotate: 180deg; background-color: rgba(255, 255, 255, 0); -unity-background-image-tint-color: rgb(247, 247, 247); background-image: none; -unity-slice-left: 0; -unity-slice-top: 0; -unity-slice-right: 0; -unity-slice-bottom: 0; border-left-color: rgb(242, 245, 242); border-right-color: rgb(242, 245, 242); border-top-color: rgb(242, 245, 242); border-bottom-color: rgb(242, 245, 242); border-top-width: 0; border-right-width: 0; border-bottom-width: 0; border-left-width: 0; border-top-left-radius: 0; border-top-right-radius: 0; border-bottom-right-radius: 0; border-bottom-left-radius: 0; -unity-background-scale-mode: scale-to-fit; bottom: 0;">
+                <ui:VisualElement name="btnImage" style="flex-grow: 0; width: 64px; height: 64px; background-image: url(&quot;project://database/Assets/Sprites/UI/ItemSys/next.png?fileID=21300000&amp;guid=f971a72c10c820246affe774d4d5b862&amp;type=3#next&quot;); align-self: center;" />
+            </ui:Button>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

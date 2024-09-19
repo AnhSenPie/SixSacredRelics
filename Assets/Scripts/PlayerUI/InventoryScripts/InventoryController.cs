@@ -6,6 +6,7 @@ using UnityEditor.Rendering;
 using UnityEngine;
 using UnityEngine.UIElements;
 using AnhSenPai;
+using System.Linq;
 
 namespace AnhSenPai.Inventory
 {
@@ -22,11 +23,11 @@ namespace AnhSenPai.Inventory
         private VisualElement m_SlotContainer;
         private VisualElement m_ItemInfo;
         private VisualElement m_ItemImage;
+        private Label m_Rarelity;
         private Label m_ItemText;
         Label budgetText;       private Label m_itemName;
         private int currentslot = 200;
         private int itemCount;
-        private bool openbag = false;
         private Slot selectedSlot;
 
         private Button deleteBtn;
@@ -45,12 +46,13 @@ namespace AnhSenPai.Inventory
             m_ItemInfo = m_Root.Q<VisualElement>("itemInfo");
             m_ItemText = m_Root.Q<Label>("description");
             m_ItemImage = m_Root.Q<VisualElement>("itemImage");
-           
+            m_Rarelity = m_Root.Q<Label>("rarelity");
             deleteBtn = m_Root.Q<Button>("dropBtn");
             usingBtn = m_Root.Q<Button>("useBtn");
             m_itemName = m_Root.Q<Label>("itemName");
             budgetText = m_Root.Q<Label>("quantityText");
             //Create InventorySlots and add them as children to the SlotContainer
+            InventoryRedisplay();
             for (int i = 0; i < currentslot; i++)
             {
                 Slot item = new Slot(OnSlotClicked);
@@ -60,9 +62,7 @@ namespace AnhSenPai.Inventory
                 m_SlotContainer.Add(item);
                 
             }
-                      
-            m_Root.visible = openbag;
-            m_ItemInfo.visible = openbag;
+
             for(int i = 0; i < InventoryData.Count; i++)
             {
                 if (InventoryData[i].quantity <= 0)
@@ -95,18 +95,6 @@ namespace AnhSenPai.Inventory
         }
         private void Update()
         {
-            if(Input.GetKeyDown(KeyCode.B))
-            {
-                openbag = !openbag;
-                m_Root.visible = openbag;
-                m_ItemInfo.visible = openbag;
-                
-                //Debug.Log(openbag);
-                if(openbag)
-                {
-                    m_Root.Focus();
-                }
-            }
             if(Input.GetKeyDown(KeyCode.A))
             {
                 AddItemByUID("diamond", 10);
@@ -148,9 +136,7 @@ namespace AnhSenPai.Inventory
                             foundItem = true;
                             InventoryItems[j].AddItem( InventoryData[i], count);
                             break;
-                        }
-                       
-                        
+                        }                        
                     }
                 }
                else if (InventoryData[i].UID == UID && InventoryData[i].stackable && InventoryData[i].quantity > 0)
@@ -194,6 +180,21 @@ namespace AnhSenPai.Inventory
                 m_ItemText.text = slot.ItemData.description;
                 m_itemName.text = slot.ItemData.itemName;
                 selectedSlot = slot;
+                switch (slot.ItemData.Rarelity)
+                {
+                    case Item.ItemRarelity.thien:
+                        m_Rarelity.text = "Thien Cap";
+                        break;
+                    case Item.ItemRarelity.dia:
+                        m_Rarelity.text = "Dia Cap";
+                        break;
+                    case Item.ItemRarelity.huyen:
+                        m_Rarelity.text = "Huyen Cap";
+                        break;
+                    case Item.ItemRarelity.hoang:
+                        m_Rarelity.text = "Hoang Cap";
+                        break;
+                }
             }
         }
         private void OnDeleteBtnClicked()
@@ -277,6 +278,7 @@ namespace AnhSenPai.Inventory
             {
                 slot.UpdateSlot();
             }
+            InventoryData = InventoryData.OrderBy(ItemData => ItemData.Rarelity).ToList();
         }
 
     }

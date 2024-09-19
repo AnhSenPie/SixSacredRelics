@@ -11,6 +11,7 @@ namespace AnhSenPai.Inventory
         public string description;
         public ItemType itemType;
         public int quantity;
+        public ItemRarelity Rarelity;
         
         public enum ItemType
         {
@@ -23,6 +24,13 @@ namespace AnhSenPai.Inventory
             CritBuff,
             CritDmgBuff,
             Weapon
+        }
+        public enum ItemRarelity
+        {
+            thien, //gold
+            dia,   //purple
+            huyen, //green
+            hoang  //white
         }
     }
 }

@@ -10,23 +10,20 @@ public class MenuController : MonoBehaviour
     Button quitBtn;
     UIDocument uIDocument;
     VisualElement root;
-    bool isOpen = false;
+   
   
-    private void Awake()
+    private void OnEnable()
     {
         uIDocument = GetComponent<UIDocument>();
         root = uIDocument.rootVisualElement;
         inventoryBtn = root.Q<Button>("inventoryBtn");
         teleBtn = root.Q<Button>("TeleportBtn");
         quitBtn = root.Q<Button>("QuitBtn");
-        root.visible = isOpen;
+    
+        teleBtn.clicked += OnTeleportClicked;
     }
-    private void Update()
+    public void OnTeleportClicked()
     {
-        if(Input.GetKeyDown(KeyCode.M))
-        {
-            isOpen = !isOpen;
-            root.visible = isOpen;
-        }       
+        UIDocumentManager.instance.UsingUIDocument(1);
     }
 }

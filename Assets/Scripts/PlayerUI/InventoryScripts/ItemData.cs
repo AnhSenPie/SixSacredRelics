@@ -13,6 +13,7 @@ namespace AnhSenPai.Inventory
         public string itemName;
         public string description;
         public Item.ItemType itemType;
+        public Item.ItemRarelity Rarelity;
         public int benefit;
         public int maxStack;
         public Sprite itemIcon;

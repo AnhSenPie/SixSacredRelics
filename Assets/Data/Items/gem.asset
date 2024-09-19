@@ -16,6 +16,7 @@ MonoBehaviour:
   itemName: "Linh th\u1EA1ch "
   description: "D\xF9ng \u0111\u1EC3 giao d\u1ECBch"
   itemType: 0
+  Rarelity: 3
   benefit: 1
   maxStack: 2147483647
   itemIcon: {fileID: 21300000, guid: d3e47173961b7db43928d70ddd520244, type: 3}

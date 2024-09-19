@@ -1,4 +1,4 @@
-﻿.container {
+.container {
     flex-grow: 0;
     width: 100%;
     height: 100%;
@@ -42,50 +42,6 @@
     padding-right: 20px;
     padding-bottom: 20px;
     padding-left: 20px;
-}
-
-.slot {
-    flex-grow: 0;
-    flex-direction: row;
-    flex-wrap: wrap;
-    -unity-text-align: upper-left;
-    margin-top: 10px;
-    margin-right: 10px;
-    margin-bottom: 10px;
-    margin-left: 10px;
-    padding-top: 10px;
-    padding-right: 10px;
-    padding-bottom: 10px;
-    padding-left: 10px;
-    width: 128px;
-    height: 128px;
-    background-image: url("project://database/Assets/Sprites/UI/ItemSys/inventoryGUI/Mini_frame0.png?fileID=2800000&guid=4293f3f43e7a5524dbcb191b0ef09d9c&type=3#Mini_frame0");
-}
-
-.slotIcon {
-    flex-grow: 0;
-    flex-wrap: wrap;
-    margin: 10px 10px 10px 10px;
-    width: 90%;
-    height: 80%;
-    align-self: center;
-}
-
-.quantity {
-    align-self: flex-start;
-    align-items: flex-start;
-    justify-content: flex-start;
-    flex-direction: row;
-    flex-wrap: wrap;
-    -unity-text-align: upper-right;
-    left: 0;
-    top: 0;
-    flex-shrink: 0;
-    flex-grow: 0;
-    height: 20%;
-    width: 100%;
-    font-size: 20px;
-    color: rgb(247, 233, 233);
 }
 
 .itemInfo {
@@ -179,7 +135,73 @@
     width: 70%;
     height: 80%;
 }
+
 .scrollView > .unity-scroll-view__vertical-scroller {
-    background-color: #e0e0e0; /* Màu nền cho thanh cuộn dọc */
-    width: 12px; /* Độ rộng của thanh cuộn */
+    background-color: rgb(224, 224, 224);
+    width: 12px;
+    background-image: url("project://database/Assets/Sprites/Backgrounds/Layers/1.png?fileID=2800000&guid=0cda9587264340548be108fecceef174&type=3#1");
+    -unity-background-image-tint-color: rgb(245, 211, 211);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.quantity {
+    flex-direction: row;
+    width: 90%;
+    height: 15%;
+    -unity-text-align: middle-right;
+    color: rgb(255, 255, 255);
+}
+
+.slotIcon {
+    flex-grow: 0;
+    flex-direction: row;
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    width: 80%;
+    justify-content: center;
+    left: 10px;
+    background-image: none;
+    flex-wrap: wrap;
+    height: 80%;
+}
+
+.slot {
+    -unity-background-image-tint-color: rgb(70, 65, 54);
+    -unity-background-scale-mode: stretch-to-fill;
+    width: 128px;
+    height: 128px;
+    background-image: url("project://database/Assets/Sprites/UI/HealthSys/Player_Index_bg.png?fileID=2800000&guid=b5b5a676bf645324cac4451727c3a4ec&type=3#Player_Index_bg");
+    align-self: auto;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    padding-top: 5px;
+    padding-right: 5px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+    border-radius: 25px
+}
+
+.thien {
+    -unity-background-image-tint-color: rgb(248, 0, 255);
+}
+
+.dia {
+    -unity-background-image-tint-color: rgb(255, 0, 85);
+}
+
+.huyen {
+    -unity-background-image-tint-color: rgb(0, 242, 187);
+}
+
+.hoang {
+    -unity-background-image-tint-color: rgb(182, 124, 25);
 }

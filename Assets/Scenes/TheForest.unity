@@ -681,38 +681,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 651736005990260988, guid: 904d0b8c28276a64c8101ddedd894d57, type: 3}
-      propertyPath: SkillList.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 651736005990260988, guid: 904d0b8c28276a64c8101ddedd894d57, type: 3}
-      propertyPath: SkillList.Array.data[1].ePrefab
-      value: 
-      objectReference: {fileID: 4614396071960602842, guid: d26ff6ef80f85274dbdaab1c9d650897, type: 3}
-    - target: {fileID: 651736005990260988, guid: 904d0b8c28276a64c8101ddedd894d57, type: 3}
-      propertyPath: SkillList.Array.data[1].qPrefab
-      value: 
-      objectReference: {fileID: 1756115049700442475, guid: 504d201263ef11347b071a55fd3aae3e, type: 3}
-    - target: {fileID: 651736005990260988, guid: 904d0b8c28276a64c8101ddedd894d57, type: 3}
-      propertyPath: SkillList.Array.data[1].rPrefab
-      value: 
-      objectReference: {fileID: 3623658164599599013, guid: d8412555888c662478f93943bd5269ea, type: 3}
-    - target: {fileID: 651736005990260988, guid: 904d0b8c28276a64c8101ddedd894d57, type: 3}
-      propertyPath: SkillList.Array.data[1].wPrefab
-      value: 
-      objectReference: {fileID: 4783275609478977454, guid: 0f2fad28afaf60e4d889e9eff2567f70, type: 3}
-    - target: {fileID: 651736005990260988, guid: 904d0b8c28276a64c8101ddedd894d57, type: 3}
-      propertyPath: SkillList.Array.data[1].WeaponName
-      value: Spear
-      objectReference: {fileID: 0}
-    - target: {fileID: 651736005990260988, guid: 904d0b8c28276a64c8101ddedd894d57, type: 3}
-      propertyPath: SkillList.Array.data[0].ManaConsume
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 651736005990260988, guid: 904d0b8c28276a64c8101ddedd894d57, type: 3}
-      propertyPath: SkillList.Array.data[1].ManaConsume
-      value: 60
-      objectReference: {fileID: 0}
     - target: {fileID: 8853461538655865705, guid: 904d0b8c28276a64c8101ddedd894d57, type: 3}
       propertyPath: m_Name
       value: Wizard Variant
@@ -73228,6 +73196,14 @@ PrefabInstance:
     - target: {fileID: 3002574995370189733, guid: 9755ae9454d8a7648a8037dbcafa35ca, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4078957279514061592, guid: 9755ae9454d8a7648a8037dbcafa35ca, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 30.796593
+      objectReference: {fileID: 0}
+    - target: {fileID: 4078957279514061592, guid: 9755ae9454d8a7648a8037dbcafa35ca, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.158043
       objectReference: {fileID: 0}
     - target: {fileID: 4918976988489851959, guid: 9755ae9454d8a7648a8037dbcafa35ca, type: 3}
       propertyPath: m_Follow
