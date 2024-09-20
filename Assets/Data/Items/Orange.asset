@@ -22,3 +22,5 @@ MonoBehaviour:
   itemIcon: {fileID: 1218446674, guid: a03c2610221b14940b818fb271b448fa, type: 3}
   stackable: 1
   quantity: 50
+  Price: 10
+  sellQuantity: 0

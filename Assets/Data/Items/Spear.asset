@@ -16,8 +16,11 @@ MonoBehaviour:
   itemName: "\u0110\u1ECBnh Nam \u0110ao"
   description: "Truy\u1EC1n th\u1EEBa c\u1EE7a M\u1EA1c \u0110\u0103ng Dung"
   itemType: 7
+  Rarelity: 0
   benefit: 1000
   maxStack: 1
   itemIcon: {fileID: 21300000, guid: a49f744e2b4732148a88d9b9b897cd6a, type: 3}
   stackable: 0
   quantity: 1
+  Price: 10000
+  sellQuantity: 0

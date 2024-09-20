@@ -1,15 +1,8 @@
 ﻿using AnhSenPai.Weapon;
 using AnhSenPai.Inventory;
-using JetBrains.Annotations;
 using System;
 using System.Collections;
-using System.Xml.Linq;
-using Unity.VisualScripting;
-using UnityEditor.UIElements;
 using UnityEngine;
-using UnityEngine.EventSystems;
-using UnityEngine.InputSystem;
-using UnityEngine.UIElements;
 using UnityEngine.SceneManagement;
 using AnhSenPai.Music;
 
@@ -71,9 +64,8 @@ namespace AnhSenPai
             rb = GetComponent<Rigidbody2D>();
             anim = GetComponent<Animator>();
 
-            
-            currentMP = maxMP;
-            currentHealth = maxHealth;
+            GetBasicIndex();
+
             MainHealthUI.instance.SetText(currentHealth, maxHealth);   
             MainManaUI.instance.SetText(currentMP, maxMP);    
             ExpManager.instance.SetExpText(currentExp, maxExp);
@@ -84,13 +76,8 @@ namespace AnhSenPai
 
             //firePoint = GetComponent<Transform>();
             weapon = GetComponent<SwitchWeapon>();
-            
-            maxExp = 10;
-            //Chỉ số nhân vật 
-            baseAtk = 10;
-            baseDef = 10;
-            baseCrit = 5;
-            baseCritDmg = 50;
+
+
             
             instance = this;
 
@@ -110,10 +97,12 @@ namespace AnhSenPai
                 Run();
                 UpdateInfo();
                 LevelUp();
+                Fly();
                 WeaponController.instance.CastSkill(weapon.weaponIndex);
             }
             ChangeSound();
             scene = SceneManager.GetActiveScene();
+            SaveBasicIndex();
         }
 
         private void OnCollisionEnter2D(Collision2D other)
@@ -121,6 +110,7 @@ namespace AnhSenPai
             if(other.gameObject.CompareTag("ground"))
             {
                 anim.SetBool("isJump", false);
+                rb.gravityScale = 1f;
                 isJumping = false;
             }
             
@@ -216,6 +206,30 @@ namespace AnhSenPai
                 alive = false;
             }
         }
+        void Fly()
+        {
+            if (Input.GetKeyDown(KeyCode.G))
+            {
+                rb.gravityScale = 0;
+                rb.AddForce(Vector2.up * jumpPower, ForceMode2D.Impulse);
+                anim.SetBool("isJump", true);
+            }
+            if(rb.gravityScale == 0)
+            {
+                if (Input.GetKeyDown(KeyCode.X))
+                {
+                    rb.AddForce(Vector2.down * jumpPower, ForceMode2D.Impulse);
+                    anim.SetBool("isJump", true);
+                }
+                currentMP -= Time.deltaTime;
+            }
+            if(currentMP <= 0)
+            {
+                rb.gravityScale = 1;
+            }
+
+        }
+
         public void ChangeHealth(float amount)
         {
             currentHealth = Mathf.Clamp(currentHealth + amount, 0, maxHealth);
@@ -308,7 +322,36 @@ namespace AnhSenPai
                 AudioManager.instance.PlayMusic(AudioManager.instance.musicSounds[scene.buildIndex].name);
             }
         }
-        
+        void SaveBasicIndex()
+        {
+            PlayerPrefs.SetFloat("currentMP", currentMP);
+            PlayerPrefs.SetInt("currentLevel", currentLevel);
+            PlayerPrefs.SetFloat("currentHP", currentHealth);
+            PlayerPrefs.SetFloat("currentExp", currentExp);
+            //maxhp, maxmp, maxexp, basecrit, basecd, baseatk, basedef
+            PlayerPrefs.SetFloat("maxHP", maxHealth);
+            PlayerPrefs.SetFloat("maxMP", maxMP);
+            PlayerPrefs.SetFloat("maxExp", maxExp);
+            PlayerPrefs.SetFloat("baseAtk", baseAtk);
+            PlayerPrefs.SetFloat("baseDef", baseDef);
+            PlayerPrefs.SetInt("baseCrit", baseCrit);
+            PlayerPrefs.SetFloat("baseCritDmg", baseCritDmg);
+
+        }
+        public void GetBasicIndex()
+        {
+            currentLevel = PlayerPrefs.GetInt("currentLevel", 1);
+            currentMP = PlayerPrefs.GetFloat("currentMP", 100);
+            currentHealth = PlayerPrefs.GetFloat("currentHP", 500);
+            currentExp = PlayerPrefs.GetFloat("currentExp", 0);
+            maxHealth = PlayerPrefs.GetFloat("maxHP", 500);
+            maxMP = PlayerPrefs.GetFloat("maxMP", 100);
+            maxExp = PlayerPrefs.GetFloat("maxExp", 10);
+            baseAtk = PlayerPrefs.GetFloat("baseAtk", 10);
+            baseCrit = PlayerPrefs.GetInt("baseCrit", 5);
+            baseCritDmg = PlayerPrefs.GetFloat("baseCritDmg", 10);
+            baseDef = PlayerPrefs.GetFloat("baseDef", 10);
+        }
     }
 }
 

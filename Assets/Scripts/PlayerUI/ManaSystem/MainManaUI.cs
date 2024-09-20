@@ -28,7 +28,18 @@ public class MainManaUI : MonoBehaviour
     }
     public void SetText(float currentMP, float maxMP)
     {
-        mpText.text = "MP: " + currentMP.ToString() + "/" + maxMP.ToString();
+        if(currentMP <= 0)
+        {
+            currentMP = 0;
+            mpText.style.color = Color.red;
+            mpText.text = "No Mana";
+        }
+        if(currentMP > 0)
+        {
+            mpText.style.color = Color.white;
+            mpText.text = "MP: " + currentMP.ToString("F2") + "/" + maxMP.ToString();
+        }
+       
     }
 
 }

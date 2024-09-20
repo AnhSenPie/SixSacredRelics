@@ -11,6 +11,7 @@ public class TeleportController : MonoBehaviour
     Button map3;
     Button map4;
     Button map5;
+    Button map6;
     UIDocument uIDocument;
     VisualElement root;
 
@@ -23,12 +24,14 @@ public class TeleportController : MonoBehaviour
         map3 = root.Q<Button>("map3");
         map4 = root.Q<Button>("map4");
         map5 = root.Q<Button>("map5");
+        map6 = root.Q<Button>("map6");
   
         map1.clicked += ()=>  teleClicked(1);
         map2.clicked += () => teleClicked(2);
         map3.clicked += () => teleClicked(3);
         map4.clicked += () => teleClicked(4);
         map5.clicked += () => teleClicked(5);
+        map6.clicked += () => teleClicked(6);
     }
     void teleClicked(int index)
     {

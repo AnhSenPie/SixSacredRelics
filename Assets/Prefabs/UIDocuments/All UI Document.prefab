@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3638886285304346793}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 25.61, y: -49.510002, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -36,6 +36,7 @@ Transform:
   - {fileID: 2192667632993600570}
   - {fileID: 4829216064537940751}
   - {fileID: 974282340811972153}
+  - {fileID: 6181371860728880075}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7336533490010650446
@@ -56,6 +57,7 @@ MonoBehaviour:
   - {fileID: 7903445797171544435}
   - {fileID: 2167498410028205731}
   - {fileID: 2780959909839326045}
+  - {fileID: 2443715800117497691}
   uiOnEnable: 0
 --- !u!1001 &52945624225551060
 PrefabInstance:
@@ -348,6 +350,79 @@ MonoBehaviour:
 Transform:
   m_CorrespondingSourceObject: {fileID: 9205959117590924371, guid: 659164e2ab7f8d34180183ecbb7bdd49, type: 3}
   m_PrefabInstance: {fileID: 1570581461024436826}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1770005315144840206
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 7816480119353803651}
+    m_Modifications:
+    - target: {fileID: 3126835944274698460, guid: 3b794e7c498565c45a54c886b232ed35, type: 3}
+      propertyPath: m_Name
+      value: PotionShop
+      objectReference: {fileID: 0}
+    - target: {fileID: 5573475569369477061, guid: 3b794e7c498565c45a54c886b232ed35, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -41.170002
+      objectReference: {fileID: 0}
+    - target: {fileID: 5573475569369477061, guid: 3b794e7c498565c45a54c886b232ed35, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 52.940002
+      objectReference: {fileID: 0}
+    - target: {fileID: 5573475569369477061, guid: 3b794e7c498565c45a54c886b232ed35, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5573475569369477061, guid: 3b794e7c498565c45a54c886b232ed35, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5573475569369477061, guid: 3b794e7c498565c45a54c886b232ed35, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5573475569369477061, guid: 3b794e7c498565c45a54c886b232ed35, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5573475569369477061, guid: 3b794e7c498565c45a54c886b232ed35, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5573475569369477061, guid: 3b794e7c498565c45a54c886b232ed35, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5573475569369477061, guid: 3b794e7c498565c45a54c886b232ed35, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5573475569369477061, guid: 3b794e7c498565c45a54c886b232ed35, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3b794e7c498565c45a54c886b232ed35, type: 3}
+--- !u!114 &2443715800117497691 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4141483059516128085, guid: 3b794e7c498565c45a54c886b232ed35, type: 3}
+  m_PrefabInstance: {fileID: 1770005315144840206}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 19102, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &6181371860728880075 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5573475569369477061, guid: 3b794e7c498565c45a54c886b232ed35, type: 3}
+  m_PrefabInstance: {fileID: 1770005315144840206}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2569743386695518357
 PrefabInstance:

@@ -22,4 +22,6 @@ MonoBehaviour:
   maxStack: 1000
   itemIcon: {fileID: 21300000, guid: ab698dab9498c1f45914c3d1497d5648, type: 3}
   stackable: 1
-  quantity: 865
+  quantity: 885
+  Price: 10
+  sellQuantity: 2147483647

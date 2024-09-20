@@ -69,27 +69,34 @@ namespace AnhSenPai.Inventory
                 {
                     quantity.visible = false;
                 }
-                switch (ItemData.Rarelity)
-                {
-                    case Item.ItemRarelity.thien:
-                        AddToClassList("thien");
-                        break;
-                    case Item.ItemRarelity.dia:
-                        AddToClassList("dia");
-                        break;
-                    case Item.ItemRarelity.huyen:
-                        AddToClassList("huyen");
-                        break;
-                    case Item.ItemRarelity.hoang:
-                        AddToClassList("hoang");
-                        break;
-                }
+                RarelityStyle();
             }
             else
             {
                 Icon.sprite = null;
-                quantity.text= null;
-                
+                quantity.text= null;           
+            }
+        }
+        public void DisableQuantityText()
+        {
+            quantity.text = null;
+        }
+        public void RarelityStyle()
+        {
+            switch (ItemData.Rarelity)
+            {
+                case Item.ItemRarelity.thien:
+                    AddToClassList("thien");
+                    break;
+                case Item.ItemRarelity.dia:
+                    AddToClassList("dia");
+                    break;
+                case Item.ItemRarelity.huyen:
+                    AddToClassList("huyen");
+                    break;
+                case Item.ItemRarelity.hoang:
+                    AddToClassList("hoang");
+                    break;
             }
         }
     }

@@ -19,6 +19,8 @@ MonoBehaviour:
   Rarelity: 1
   benefit: 10000
   maxStack: 1000
-  itemIcon: {fileID: 1987916976, guid: a03c2610221b14940b818fb271b448fa, type: 3}
+  itemIcon: {fileID: 21300000, guid: 6c6d862aaa68de443ac8b913b48c123d, type: 3}
   stackable: 1
   quantity: 10
+  Price: 100
+  sellQuantity: 2147483647

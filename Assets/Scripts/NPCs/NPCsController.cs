@@ -7,7 +7,9 @@ public class NPCsController : MonoBehaviour
     public GameObject key;
     public GameObject button;
     private bool isPlayerNear = false;
-
+    public string NpcName;
+    public string[] NpcDialogues;
+    public Sprite NpcImage;
     void Update()
     {
         if (isPlayerNear)
@@ -43,7 +45,8 @@ public class NPCsController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.F))
         {
-            UIDocumentManager.instance.UsingUIDocument(4);
+            UIDocumentManager.instance.ShowUIDocument(4);
+            NPCDialogs.instance.StartDialogue(NpcName, NpcDialogues, NpcImage);
         }
     }
 }

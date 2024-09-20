@@ -13,16 +13,17 @@ public class UIDocumentManager : MonoBehaviour
     {
         NoneDisPlayUI();
         ShowUIDocument(3);
+        currentIndex = -1;
         uiOnEnable = false;
         instance = this;
     }
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.B))
+        CheckUIEnable();
+        if (Input.GetKeyDown(KeyCode.B))
         {
             UsingUIDocument(2);
-        }
-        CheckUIEnable();
+        }   
         if(Input.GetKeyDown(KeyCode.Escape))
         {
             UsingUIDocument(0);
@@ -38,8 +39,9 @@ public class UIDocumentManager : MonoBehaviour
         if (index >= 0 && index < uiDocuments.Length )
         {
             uiDocuments[index].rootVisualElement.style.display = DisplayStyle.Flex;
+            currentIndex = index;
         }
-  
+        
     }
     public void NoneDisPlayUI()
     {
@@ -56,8 +58,7 @@ public class UIDocumentManager : MonoBehaviour
         }
         else
         {
-            ShowUIDocument(index);
-            currentIndex = index;
+            ShowUIDocument(index);           
         }
     }
     public void DisableUI(int index)

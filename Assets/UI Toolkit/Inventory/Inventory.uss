@@ -2,7 +2,7 @@
     flex-grow: 0;
     width: 100%;
     height: 100%;
-    background-image: url("project://database/Assets/Sprites/UI/ItemSys/inventoryGUI/barmid_ready.png?fileID=21300000&guid=f7f681cd213d9a7488500ce745f2d4f8&type=3#barmid_ready");
+    background-image: url("../../Sprites/UI/ItemSys/inventoryGUI/barmid_ready.png");
 }
 
 .header {
@@ -31,7 +31,7 @@
 
 .slotsContainer {
     flex-grow: 0;
-    background-image: url("project://database/Assets/Sprites/UI/ItemSys/inventoryGUI/Mini_background.png?fileID=21300000&guid=4f033cdd2b09f9a43b139729d09d002c&type=3#Mini_background");
+    background-image: url("../../Sprites/UI/ItemSys/inventoryGUI/Mini_background.png");
     height: 82%;
     flex-direction: row;
     flex-wrap: wrap;
@@ -49,7 +49,7 @@
     width: 90%;
     height: 68%;
     align-self: center;
-    background-image: url("project://database/Assets/Sprites/UI/ItemSys/inventoryGUI/Frame_big.png?fileID=21300000&guid=c430351465fe1fc42a6bef5878a08253&type=3#Frame_big");
+    background-image: url("../../Sprites/UI/ItemSys/inventoryGUI/Frame_big.png");
     background-color: rgba(255, 255, 255, 0);
     -unity-background-image-tint-color: rgb(255, 156, 86);
 }
@@ -83,7 +83,7 @@
     border-top-right-radius: 6px;
     border-bottom-right-radius: 6px;
     border-bottom-left-radius: 6px;
-    background-image: url("project://database/Assets/Sprites/Map/TheForest/Backgrounds/BACKGROUND.png?fileID=21300000&guid=f44fd67bd73d546469d7c317fcd1d5ae&type=3#BACKGROUND");
+    background-image: url("../../Sprites/Map/TheForest/Backgrounds/BACKGROUND.png");
     -unity-background-image-tint-color: rgb(230, 79, 86);
     font-size: 18px;
     color: rgb(255, 242, 242);
@@ -139,7 +139,6 @@
 .scrollView > .unity-scroll-view__vertical-scroller {
     background-color: rgb(224, 224, 224);
     width: 12px;
-    background-image: url("project://database/Assets/Sprites/Backgrounds/Layers/1.png?fileID=2800000&guid=0cda9587264340548be108fecceef174&type=3#1");
     -unity-background-image-tint-color: rgb(245, 211, 211);
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
@@ -175,7 +174,7 @@
     -unity-background-scale-mode: stretch-to-fill;
     width: 128px;
     height: 128px;
-    background-image: url("project://database/Assets/Sprites/UI/HealthSys/Player_Index_bg.png?fileID=2800000&guid=b5b5a676bf645324cac4451727c3a4ec&type=3#Player_Index_bg");
+    background-image: url("../../Sprites/UI/HealthSys/Player_Index_bg.png");
     align-self: auto;
     flex-direction: row;
     flex-wrap: wrap;

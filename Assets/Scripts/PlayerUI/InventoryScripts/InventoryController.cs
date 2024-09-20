@@ -8,6 +8,7 @@ using UnityEngine.UIElements;
 using AnhSenPai;
 using System.Linq;
 
+
 namespace AnhSenPai.Inventory
 {
     public class InventoryController : MonoBehaviour
@@ -51,6 +52,7 @@ namespace AnhSenPai.Inventory
             usingBtn = m_Root.Q<Button>("useBtn");
             m_itemName = m_Root.Q<Label>("itemName");
             budgetText = m_Root.Q<Label>("quantityText");
+
             //Create InventorySlots and add them as children to the SlotContainer
             InventoryRedisplay();
             for (int i = 0; i < currentslot; i++)
@@ -99,7 +101,6 @@ namespace AnhSenPai.Inventory
             {
                 AddItemByUID("diamond", 10);
             }
-          
         }
 
         IEnumerator decreasingTime(float time, float baseIndex, float buffIndex)
@@ -280,6 +281,5 @@ namespace AnhSenPai.Inventory
             }
             InventoryData = InventoryData.OrderBy(ItemData => ItemData.Rarelity).ToList();
         }
-
     }
 }

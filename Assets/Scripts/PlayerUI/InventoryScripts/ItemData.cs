@@ -19,5 +19,7 @@ namespace AnhSenPai.Inventory
         public Sprite itemIcon;
         public bool stackable;
         public int quantity;
-    }
+        public int Price;
+        public int sellQuantity;
+    } 
 }
